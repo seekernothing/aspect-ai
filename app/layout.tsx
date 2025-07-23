@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { clerkMiddleware } from "@clerk/nextjs/server";
+
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
@@ -26,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-      <html lang="en">
+      <html lang="en" data-theme="corporate">
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
