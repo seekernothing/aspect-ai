@@ -3,6 +3,7 @@ import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 const isProtectedRoute = createRouteMatcher([
   "/video-upload(.*)",
   "/social-share(.*)",
+  // "/api/video(.*)",
 ]);
 
 const isPublicRoute = createRouteMatcher([
