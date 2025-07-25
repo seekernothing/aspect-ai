@@ -18,7 +18,7 @@ interface CloudinaryUploadResult {
   duration?: string;
   [key: string]: any;
 }
-
+export async function POST(request: NextRequest) {
   try {
     const { userId } = await auth();
 
@@ -78,14 +78,15 @@ interface CloudinaryUploadResult {
       },
     });
 
-    return NextResponse.json(video)
+    return NextResponse.json(video);
   } catch (error) {
     console.log("Upload video failed", error);
     return NextResponse.json({ error: "Upload video failed" }, { status: 500 });
-  } finally{
-    await prisma.$disconnect()
+  } finally {
+    await prisma.$disconnect();
   }
 }
+
 
 
 
